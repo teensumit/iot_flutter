@@ -5,6 +5,9 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Future.delayed(const Duration(seconds: 2), () {
+      Navigator.pushReplacementNamed(context, '/iot');
+    });
     return Scaffold(
       body: Center(
         child: Column(
@@ -14,7 +17,7 @@ class SplashScreen extends StatelessWidget {
               "assets/iot.png",
               height: 60,
             ),
-            Text("IOT Flutter")
+            const Text("IOT Flutter")
           ],
         ),
       ),

@@ -17,10 +17,10 @@ class PubNubInstance {
         defaultKeyset: Keyset(
             subscribeKey: dotenv.env['PUBNUB_SUBSCRIBE_KEY']!,
             publishKey: dotenv.env['PUBNUB_PUBLISH_KEY'],
-            uuid: UUID("iot_flutter")));
+            uuid: const UUID(AppData.UUID)));
 
     _subscription =
-        _pubnub.subscribe(channels: {"IOT_FLUTTER"}, withPresence: true);
+        _pubnub.subscribe(channels: AppData.CHANNELS, withPresence: false);
     _subscription.resume();
   }
 
